@@ -1,19 +1,18 @@
 # Charlie CCG 3/24/2022
 
-wordfile = open("/Users/p22cgussen/Desktop/Labs/case-study-word-play-p22cgussen/words.txt")
-line = wordfile.readline().strip()
+words = open("/Users/p22cgussen/Desktop/Labs/case-study-word-play-p22cgussen/words.txt")
+line = words.readline().strip()
 
-# defined the function
-def avoid(text):
-    counter = 0
-    # checks if the line meets the requirements
-    for line in wordfile:
+def avoid(text): # define function
+    count = 0
+    for line in words: # for loop to count each word that meets criteria
         if text not in line:
-            counter += 1
-    return counter
+            count += 1
+    return count
             
 
-forbidden = input('Please enter the string to exclude: ')
+forbidden = input("Enter the charaters to exclude: ") # input statement for user
 
-# calling the function within the print statement for a value
-print('{0} words found.'.format(avoid(forbidden)))
+print("{0} words found.".format(avoid(forbidden))) # print statement and call function
+
+words.close()
